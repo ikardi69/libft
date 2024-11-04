@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 17:57:50 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/03 03:19:14 by mteffahi         ###   ########.fr       */
+/*   Created: 2024/10/22 16:36:50 by mteffahi          #+#    #+#             */
+/*   Updated: 2024/11/02 23:48:42 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_atoi(const char *str)
 {
-	unsigned char *ptr;
 	size_t	i;
+	int	sign;
+	long	nbr;
 
 	i = 0;
-	ptr = (unsigned char *)s;
-	while (i < n)
+	sign = 1;
+	nbr = 0;
+	if (!str)
+		return (0);
+	while (str[i] == ' ' || str[i] >= 9 && str[i] <= 13)
+		i++;
+	if (str[i] == '-')
 	{
-		ptr[i] = (unsigned char)c;
+		sign *= -1;
 		i++;
 	}
-	return (s);
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
+	{
+		nbr *= 10;
+		nbr += str[i] - 48;
+		i++;
+	}
+	return (nbr * sign);
 }

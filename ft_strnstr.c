@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 17:57:50 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/03 03:19:14 by mteffahi         ###   ########.fr       */
+/*   Created: 2024/10/26 12:34:01 by mteffahi          #+#    #+#             */
+/*   Updated: 2024/10/26 12:52:50 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strnstr(const char *big,	const char *little, size_t len)
 {
-	unsigned char *ptr;
 	size_t	i;
-
+	size_t	j;
+	
+	if (!little)
+		return ((char *)big);
 	i = 0;
-	ptr = (unsigned char *)s;
-	while (i < n)
+	j = 0;
+	while (i < len && big[i] != '\0')
 	{
-		ptr[i] = (unsigned char)c;
+		while (big[i] == little[j])
+		{
+			i++;
+			j++;
+		}
+		if (little[j] == '\0')
+			return ((char *)big + (i - j));
+		else
+			j = 0;
 		i++;
 	}
-	return (s);
+	return (NULL);
 }

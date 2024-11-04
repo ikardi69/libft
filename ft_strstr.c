@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 17:57:50 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/03 03:19:14 by mteffahi         ###   ########.fr       */
+/*   Created: 2024/10/22 16:21:32 by mteffahi          #+#    #+#             */
+/*   Updated: 2024/10/22 16:30:14 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strstr(const char *s, const char *to_find)
 {
-	unsigned char *ptr;
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	ptr = (unsigned char *)s;
-	while (i < n)
+	while (s[i] != '\0')
 	{
-		ptr[i] = (unsigned char)c;
+		while (s[i] == to_find[j])
+		{
+				i++;
+				j++;
+		}
+		if (to_find[j] == '\0')
+			return ((char *)s + (i - j));
+		else
+			j = 0;
 		i++;
 	}
-	return (s);
+	return (NULL);
 }
