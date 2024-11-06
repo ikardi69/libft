@@ -6,16 +6,16 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:36:50 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/02 23:48:42 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/04 23:52:00 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
 	size_t	i;
-	int	sign;
+	int		sign;
 	long	nbr;
 
 	i = 0;
@@ -23,7 +23,7 @@ int	ft_atoi(const char *str)
 	nbr = 0;
 	if (!str)
 		return (0);
-	while (str[i] == ' ' || str[i] >= 9 && str[i] <= 13)
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-')
 	{

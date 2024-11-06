@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 13:10:42 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/10/26 18:28:46 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/04 23:07:34 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *result;
+	char	*result;
 	size_t	size;
 
 	if (!s1 || !s2)

@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 03:50:48 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/04 03:53:10 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/04 23:02:36 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putstr_fd(char *s, int fd)
 
 	i = 0;
 	if (!s || fd < 0)
-		return;
+		return ;
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);

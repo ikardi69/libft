@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:57:50 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/03 03:19:14 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/04 23:00:57 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char *ptr;
-	size_t	i;
+	unsigned char	*ptr;
+	size_t			i;
 
 	i = 0;
 	ptr = (unsigned char *)s;

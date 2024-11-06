@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:34:01 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/10/26 12:52:50 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/04 23:09:37 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *big,	const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	
+
 	if (!little)
 		return ((char *)big);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 18:43:16 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/10/21 18:51:24 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/04 22:59:46 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (ptr[i] == c)
-			return (ptr+i);
+			return (ptr + i);
 		i++;
 	}
 	return (NULL);

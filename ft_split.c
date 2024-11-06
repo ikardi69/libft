@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:03:15 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/10/31 21:41:02 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/05 02:47:42 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ static size_t	ft_count_words(char const *s, char c)
 	i = 0;
 	count = 0;
 	while (s[i] == c && s[i] != '\0')
-	    i++;
+		i++;
 	while (s[i] != '\0')
 	{
-	    if (i == 0 || s[i] != c && s[i - 1] == c)
-	        count++;
+		if (i == 0 || (s[i] != c && s[i - 1] == c))
+			count++;
 		i++;
 	}
 	return (count);
 }
 
-static char **ft_free(char **s, size_t	size)
+static char	**ft_free(char **s, size_t	size)
 {
 	size_t	i;
 
@@ -43,6 +43,7 @@ static char **ft_free(char **s, size_t	size)
 	free(s);
 	return (NULL);
 }
+
 static	char	**ft_alloc(char **words, char const *s, char c, size_t size)
 {
 	size_t	end;
@@ -60,7 +61,7 @@ static	char	**ft_alloc(char **words, char const *s, char c, size_t size)
 		{
 			while (s[end] != c && s[end] != '\0')
 				end++;
-			words[k] = ft_substr(s+start, 0, ((end - start)));
+			words[k] = ft_substr(s + start, 0, ((end - start)));
 			if (!words[k])
 				return (ft_free(words, size));
 			start = end + 1;
@@ -71,14 +72,13 @@ static	char	**ft_alloc(char **words, char const *s, char c, size_t size)
 	return (words);
 }
 
-
 char	**ft_split(char const *s, char c)
 {
 	size_t	count;
-	char **words;
+	char	**words;
 	size_t	i;
 
-	if (s == NULL)
+	if (!s || !c)
 		return (NULL);
 	count = ft_count_words(s, c);
 	words = malloc(sizeof(char *) * (count + 1));

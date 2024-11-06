@@ -6,10 +6,9 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:45:08 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/10/21 17:45:11 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/05 02:53:36 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -24,9 +23,11 @@ char	*ft_strchr(const char *s, int c)
 	size = ft_strlen(s);
 	while (i <= size)
 	{
-		if (s[i] == c)
-			return (ptr+i);
+		if (s[i] == (char)c)
+			return (ptr + i);
 		i++;
 	}
+	if (ptr[i] == (char)c)
+		return (ptr + i);
 	return (NULL);
 }

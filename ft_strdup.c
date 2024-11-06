@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 18:19:32 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/10/26 18:26:32 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/04 23:06:45 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strdup(const char *s)
 {
 	size_t	size;
-	char *result;
+	char	*result;
 
 	size = ft_strlen(s) + 1;
 	result = (char *)malloc(size);

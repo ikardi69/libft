@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 21:45:23 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/10/31 22:14:50 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/04 22:59:07 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	nbr_size(long n)
 {
-	size_t size;
+	size_t	size;
 
 	size = 0;
 	if (n == 0)
@@ -40,11 +40,12 @@ static	void	conv_nb(long nbr, char *r, size_t size)
 	if (size == 0)
 		r[size] = '-';
 }
+
 char	*ft_itoa(int n)
 {
 	size_t	size;
-	long nbr;
-	char *r;
+	long	nbr;
+	char	*r;
 
 	nbr = n;
 	if (nbr == 0)

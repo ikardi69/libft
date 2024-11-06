@@ -16,6 +16,16 @@ void ft_test2(unsigned int index, char *s)
 		s[index] = s[index];
 }
 
+void	ft_print_result(char const *s)
+{
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
+}
+
 int main()
 {
 	//char str[] = "hello ";
@@ -97,6 +107,7 @@ int main()
 	ft_striteri(str, ft_test2);
 	printf("after = %s\n", str);
 	*/
+/*
 	int ptr = open("a", O_WRONLY);
 	if (ptr < 0)
 	{
@@ -104,6 +115,78 @@ int main()
 		return (1);
 	}
 	ft_putnbr_fd(-34546, ptr);
-	close(ptr);
+	close(ptr);*/
+	/*
+	char str[] = "\0aa\0bbb";
+	char **r = ft_split(str, '\0');
+	if (!r)
+		printf("allocation failed\n");
+	for (int i = 0; i < sizeof(r); i++)
+	printf("%s\n", r[i]);
+	free(r);
+	*/
+/*	ft_memcmp
+	printf("test1 %d\n", ft_memcmp("salut", "salut", 5));
+	printf("test1 %d\n", memcmp("salut", "salut", 5));
+	printf("test2 %d\n", ft_memcmp("t\200", "t\0", 2));
+	printf("test2 %d\n", memcmp("t\200", "t\0", 2));
+	printf("test3 %d\n", ft_memcmp("testss", "test", 5));
+	printf("test3 %d\n", memcmp("testss", "test", 5));
+	printf("test4 %d\n", ft_memcmp("test", "tEst", 4));
+	printf("test4 %d\n", memcmp("test", "tEst", 4));
+	printf("test5 %d\n", ft_memcmp("", "test", 4));
+	printf("test5 %d\n", memcmp("", "test", 4));
+	printf("test6 %d\n", ft_memcmp("test", "", 4));
+	printf("test6 %d\n", memcmp("test", "", 4));
+	printf("test7 %d\n", ft_memcmp("abcdefghij", "abcdefgxyz", 7));
+	printf("test7 %d\n", memcmp("abcdefghij", "abcdefgxyz", 7));
+	printf("test8 %d\n", ft_memcmp("abcdefgh", "abcdwxyz", 6));
+	printf("test8 %d\n", memcmp("abcdefgh", "abcdwxyz", 6));
+
+	printf("test9 %d\n", ft_memcmp("zyxbcdefgh", "abcdefgxyz", 0));
+	printf("test9 %d\n", memcmp("zyxbcdefgh", "abcdefgxyz", 0));
+	*/
+/*
+	printf("substr\n");
+	char	str[] = "lorem ipsum dolor sit amet";
+	char	*strsub;
+
+	printf("str = %s\n", str);
+	if (!(strsub = ft_substr(str, 0, 0)))
+	{
+		printf("NULL");
+		return (1);
+	}
+	else
+		printf("strsub = %s\n", strsub);
+	printf("%zu\n", ft_strlen(strsub));
+	if (str == strsub)
+		printf("\nA new string was not returned");
+	free(strsub);*/
+/*
+	char *bullshit;
+	if (!(strsub = ft_substr(str, 400, 20)))
+		ft_print_result("NULL");
+	else
+	{
+		bullshit = (char *)&strsub[30];
+		bullshit = "FULL BULLSHIT";
+		if (strsub)
+			ft_print_result(strsub);
+		else
+			ft_print_result("rip");
+	}
+	if (str == strsub)
+		ft_print_result("\nA new string was not returned");
+	(void)bullshit;
+	free(strsub);*/
+	int r = ft_strncmp("test\200", "test\0", 6);
+	/*if (!r)
+	{
+		printf("NULL\n");
+		return (1);
+	}
+	else*/
+		printf("%d\n", r);
 	return 0;
 }
