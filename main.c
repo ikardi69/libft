@@ -187,6 +187,7 @@ int main()
 		return (1);
 	}
 	else*/
-		printf("%d\n", r);
+		printf("ft%d\n", r);
+	printf("or %d\n", strncmp("test\200", "test\0", 6));
 	return 0;
 }
