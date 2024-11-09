@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:45:08 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/05 02:53:36 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/09 02:35:35 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
-	size_t	size;
 	char	*ptr;
 
 	i = 0;
 	ptr = (char *)s;
-	size = ft_strlen(s);
-	while (i <= size)
+	while (ptr[i] != '\0')
 	{
-		if (s[i] == (char)c)
+		if (ptr[i] == (unsigned char)c)
 			return (ptr + i);
 		i++;
 	}

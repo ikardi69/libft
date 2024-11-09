@@ -180,14 +180,69 @@ int main()
 		ft_print_result("\nA new string was not returned");
 	(void)bullshit;
 	free(strsub);*/
+	/*
 	int r = ft_strncmp("test\200", "test\0", 6);
-	/*if (!r)
+	if (!r)
 	{
 		printf("NULL\n");
 		return (1);
 	}
-	else*/
+	else
 		printf("ft%d\n", r);
-	printf("or %d\n", strncmp("test\200", "test\0", 6));
-	return 0;
+	printf("or %d\n", strncmp("test\200", "test\0", 6));*/
+	/*char	str[] = "lorem ipsum dolor sit amet";
+	char	*strsub;
+	if (!(strsub = ft_substr(str, 0, 0)))
+		ft_print_result("NULL");
+	else
+		ft_print_result(strsub);
+	if (str == strsub)
+		ft_print_result("\nA new string was not returned");
+	free(strsub);*/
+	/*
+	char *str;
+    if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "dolor", 15)))
+        ft_print_result("NULL");
+    else
+        ft_print_result(str);
+	printf("\nstr = %zu\n", ft_strlen("lorem ipsum dol"));*/
+	//ft_print_result(ft_atoi(""));
+	//printf("%d\n", atoi("-"));
+	//printf("%d\n", ft_atoi("-"));
+    /*void *mem = malloc(sizeof(mem) * 5);  // Allocate 5 bytes for mem
+    if (!mem)               // Check if malloc succeeded
+        return (1);
+        
+    memset(mem, 'e', 5);    // Set 5 bytes to 'e'
+    ft_bzero(mem, 5);       // Set 5 bytes to 0
+    
+    // Type cast void* to unsigned char* for array access
+    unsigned char *ptr = (unsigned char *)mem;
+    
+    int i = 0;
+    while (i < 5)  // Changed to 5 to avoid buffer overflow
+    {
+        if (ptr[i] == 0)    // Now using ptr instead of mem
+            printf("%d\n", ptr[i]);
+        i++;
+    }
+    
+    free(mem);              // Free allocated memory*/
+	//printf("%s\n", ft_strnstr("", "", 0));
+	char *strtrim;
+	char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
+	strtrim = ft_strtrim(s1, " ");
+	if (!(strtrim))
+		ft_print_result("NULL");
+	else
+	{
+		//for (unsigned long int i = 0; i < sizeof(strtrim); i++)
+		printf("%s\n", strtrim);
+	}
+		//ft_print_result(strtrim);
+	/*if (strtrim == s1)
+			ft_print_result("\nA new string was not returned");*/
+	free(strtrim);
+    return (0);
+		//printf(("%d, "), (char *)mem[i]);
 }

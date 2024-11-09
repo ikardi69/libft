@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:45:23 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/06 04:29:01 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/09 02:37:54 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	i;
 	char	*ptr;
 
-	if (!s)
-		return (NULL);
 	i = ft_strlen(s);
 	ptr = (char *)s;
 	while (i > 0)
