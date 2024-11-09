@@ -21,7 +21,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i] != '\0')
 	{
+<<<<<<< HEAD
 		f(i, &s[i]);
+=======
+		s[i] = f(i, s);
+>>>>>>> 0e53803cd3613ea10933d1fb3ba5a02a1a9a679d
 		i++;
 	}
 }
