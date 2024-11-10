@@ -230,14 +230,31 @@ int main()
     free(mem);              // Free allocated memory*/
 	//printf("%s\n", ft_strnstr("", "", 0));
 	char *strtrim;
-	char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
-	strtrim = ft_strtrim(s1, " ");
+	//char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
+	strtrim = ft_strtrim("\t   \n\n\n  \n\n\t    Hello \t  Please\n Trim me !\t\t\t\n  \t\t\t\t  ", " \n\t");
 	if (!(strtrim))
 		ft_print_result("NULL");
 	else
 	{
 		//for (unsigned long int i = 0; i < sizeof(strtrim); i++)
-		printf("%s\n", strtrim);
+		int i = 0;
+		int j = 0;
+		while (strtrim[i] != '\0')
+		{
+			if (strtrim[i] == '\n' || strtrim[i] == '\t')
+			{
+				printf("t");
+				i++;
+				j++;
+			}
+			else
+			{
+				printf("%c", strtrim[i]);
+				i++;
+			}
+		}
+		printf("\nsize strtrim = %zu\n", ft_strlen(strtrim));
+		//printf("%s\n", strtrim);
 	}
 		//ft_print_result(strtrim);
 	/*if (strtrim == s1)
