@@ -114,8 +114,9 @@ int main()
 		printf("failed to open the file\n");
 		return (1);
 	}
-	ft_putnbr_fd(-34546, ptr);
-	close(ptr);*/
+	ft_putnbr_fd(2147483647, ptr);
+	close(ptr);
+*/
 	/*
 	char str[] = "\0aa\0bbb";
 	char **r = ft_split(str, '\0');
@@ -229,6 +230,7 @@ int main()
     
     free(mem);              // Free allocated memory*/
 	//printf("%s\n", ft_strnstr("", "", 0));
+	/*
 	char *strtrim;
 	//char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
 	strtrim = ft_strtrim("\t   \n\n\n  \n\n\t    Hello \t  Please\n Trim me !\t\t\t\n  \t\t\t\t  ", " \n\t");
@@ -255,11 +257,27 @@ int main()
 		}
 		printf("\nsize strtrim = %zu\n", ft_strlen(strtrim));
 		//printf("%s\n", strtrim);
-	}
+	}*/
 		//ft_print_result(strtrim);
 	/*if (strtrim == s1)
-			ft_print_result("\nA new string was not returned");*/
-	free(strtrim);
+			ft_print_result("\nA new string was not returned");
+	free(strtrim);*/
+	/*char *res = ft_itoa(0);
+	if (!res)
+		printf("failed\n");
+	else
+		printf("%s\n", res);*/
+	char	s1[] = "\0";
+	char	s2[] = "\0";
+	char	*strjoin;
+	if (!(strjoin = ft_strjoin("abcd", "efghi")))
+		ft_print_result("NULL");
+	else
+		ft_print_result(strjoin);
+	if (strjoin == s1 || strjoin == s2)
+		ft_print_result("\nA new string was not returned");
+	//printf("main size = %zu\n", ft_strlen(strjoin));
+	free(strjoin);
     return (0);
 		//printf(("%d, "), (char *)mem[i]);
 }

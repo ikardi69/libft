@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 21:45:23 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/08 04:51:57 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/10 05:50:53 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static char	*ft_zero(char *r)
 	if (!r)
 		return (NULL);
 	r[0] = '0';
+	r[1] = '\0';
 	return (r);
 }
 
