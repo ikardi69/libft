@@ -22,21 +22,32 @@ char	*ft_strnstr(const char *big,	const char *little, size_t len)
 		return ((char *)big);
 	if (big == little)
 		return ((char *)big);
-	if ( len == (size_t)-1)
-		len = ft_strlen(big) + 1;
+	if (len == (size_t)-1)
+		len = ft_strlen(big);
 	i = 0;
 	j = 0;
-	while (i < len && big[i] != '\0')
+	while (i <= len && big[i] != '\0')
 	{
 		j = 0;
-		while (i < len && big[i] == little[j] && (big[i] != '\0' && little[j] != '\0'))
+		printf("big[i] = %c little[0] = %c\n", big[i], little[0]);
+		if (big[i] == little[j])
 		{
-			i++;
-			j++;
+			while (i <= len && big[i] == little[j] && (big[i] != '\0' && little[j] != '\0'))
+			{
+				i++;
+				j++;
+			}
+			if (little[j] == '\0' && i <= len)
+				return ((char *)big + (i - j));
+			else
+				break ;		//hadi kt breaki loop kamla fiha mochkil
+			if (big[i - 1] == little[0])
+			{
+				i -= 1;
+			}
 		}
-		if (little[j] == '\0' && big[i] != '\0')
-			return ((char *)big + (i - j));
-		i++;
+		else
+			i++;
 	}
 	return (NULL);
 }

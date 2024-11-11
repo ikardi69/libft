@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <bsd/string.h>
 
 char ft_test(unsigned int index, char c)
 {
@@ -310,14 +311,19 @@ int main()
 	//char	*str1 = "abc";
 	//char	*str2 = "abc";
 	//size_t	n = 19;
-	char *res = ft_strnstr("abcdeft", "deft", -1);
-	char *res_std = strnstr("abcdeft", "deft", -1);
+	char haystack[30] = "aaabcabcd";
+	//char *res = ft_strnstr("abcdefgh", "abc", 10);
+	//char needle[10] = "aabc";
+	//char *res = ft_strnstr(haystack, needle, -1);
+	char *res = ft_strnstr(haystack, "abcd", 9);
+	char *res_std = strnstr(haystack, "abcd", 9);
 	printf("res = %s\n", res);
 	printf("res_std = %s\n", res_std);
 	if (res == res_std)
  		printf("well done\n");
 	else
 		printf("failed\n");
+	//printf("%zu\n", (size_t)-1);
     return (0);
 		//printf(("%d, "), (char *)mem[i]);
 }

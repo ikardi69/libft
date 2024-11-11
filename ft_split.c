@@ -76,7 +76,7 @@ char	**ft_split(char const *s, char c)
 {
 	size_t	count;
 	char	**words;
-	size_t	i;
+	//size_t	i;
 
 	if (!s || !c)
 		return (NULL);
@@ -84,7 +84,7 @@ char	**ft_split(char const *s, char c)
 	words = malloc(sizeof(char *) * (count + 1));
 	if (!words)
 		return (ft_free(words, (count + 1)));
-	i = 0;
+	//i = 0;
 	words = ft_alloc(words, s, c, count + 1);
 	if (!words)
 		return (ft_free(words, (count + 1)));

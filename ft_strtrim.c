@@ -22,9 +22,7 @@ static	size_t	ft_skip(char const *s1, char const *set)
 	while (s1[i] != '\0')
 	{
 		if ((ft_strchr(set, s1[i])))
-		{
 			i++;
-		}
 		else
 			break ;
 	}
@@ -34,11 +32,11 @@ static	size_t	ft_skip(char const *s1, char const *set)
 static	size_t	ft_size_total(char const *s1, char const *set)
 {
 	size_t	i;
-	size_t	j;
+	//size_t	j;
 	size_t	k;
 
 	i = 0;
-	j = 0;
+	//j = 0;
 	while (s1[i] != '\0')
 	{
 		if ((ft_strchr(set, s1[i])))
