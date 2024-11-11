@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 13:10:42 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/10 07:20:07 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/11 01:50:55 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_memcpy(result, s1, ft_strlen(s1));
 	ft_memcpy(result + ft_strlen(s1), s2, ft_strlen(s2));
-	result[size] = '\0';
+	result[size  - 1] = '\0';
 	return (result);
 }

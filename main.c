@@ -267,6 +267,7 @@ int main()
 		printf("failed\n");
 	else
 		printf("%s\n", res);*/
+/*
 	char	s1[] = "\0";
 	char	s2[] = "\0";
 	char	*strjoin;
@@ -278,6 +279,45 @@ int main()
 		ft_print_result("\nA new string was not returned");
 	//printf("main size = %zu\n", ft_strlen(strjoin));
 	free(strjoin);
+*/
+/*
+	char *s1 = "where is my ";
+ 	char *s2 = "malloc ???";
+ 	char *s3 = "where is my malloc ???";
+
+ 	char *res = ft_strjoin(s1, s2);
+ 	if (!strncmp(res, s3, strlen(s3)))
+		printf("well done \n");
+	else
+		printf("failed\n");
+	printf("s3 sizw = %zu, res size = %zu\n", strlen(s3), strlen(res));
+	free(res);
+*/
+ 	//char *s1 = "oh no not the empty string !";
+ 	//char *s2 = "";
+/*
+	char *s1 = "A";
+ 	size_t max = strlen(s1) + 1;
+ 	char *i1 = strnstr(s1, s1, max);
+ 	char *i2 = ft_strnstr(s1, s1, max);
+	printf("i1 = %s\n", i1);
+	printf("i2 = %s\n", i2);
+ 	if (i1 == i2)
+ 		printf("well done\n");
+	else
+		printf("failed\n");
+*/
+	//char	*str1 = "abc";
+	//char	*str2 = "abc";
+	//size_t	n = 19;
+	char *res = ft_strnstr("abcdeft", "deft", -1);
+	char *res_std = strnstr("abcdeft", "deft", -1);
+	printf("res = %s\n", res);
+	printf("res_std = %s\n", res_std);
+	if (res == res_std)
+ 		printf("well done\n");
+	else
+		printf("failed\n");
     return (0);
 		//printf(("%d, "), (char *)mem[i]);
 }
