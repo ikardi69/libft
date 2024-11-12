@@ -2,7 +2,19 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <dlfcn.h>
+#include <execinfo.h>
 //#include <bsd/string.h>
+/*
+int set_signature(const char *format, ...)
+{
+	int g_offset;
+	va_list args;
+	va_start(args, format);
+	g_offset = vsprintf(signature, format, args);
+	va_end(args);
+	return g_offset;
+}*/
 
 char ft_test(unsigned int index, char c)
 {
@@ -321,6 +333,7 @@ int main()
 	//char needle[10] = "aabc";
 	//char *res = ft_strnstr(haystack, needle, -1);
 	//char *res = ft_strnstr(haystack, "abcd", 9);
+/*
 	char *res = ft_strnstr("mouhssine simo mouhssine", "mouhssine", 10);
 	printf("res = %s\n", res);
 	char *res_std = strnstr("mouhssine simo mouhssine", "mouhssine", 10);
@@ -331,6 +344,26 @@ int main()
 	else
 		printf("failed\n");
 	//printf("%zu\n", (size_t)-1);
+*/
+/*
+	void	*mem;
+	if (!(mem = malloc(sizeof(*mem) * 30)))
+	{
+		printf("failed\n");
+		return (1);
+	}
+	memset(mem, 'j', 30);
+	if (mem != ft_memcpy(((void *)0), ((void *)0), 3))	//memcpy(((void *)0), ((void *)0), 3);		memcpy(mem, "zy\0xw\0vu\0\0tsr", 11)
+		write(1, "dest's adress was not returned\n", 31);
+	write(1, mem, 30);
+	free(mem);
+*/
+	char dest[0x100];
+	char dest_std[0x100];
+	int res_std = strlcpy(dest_std, "aaa", 2);
+	printf("dest_std = %s\n res_std = %d\n", dest_std, res_std);
+	int res = ft_strlcpy(dest, "aaa", 2);
+	printf("ft dest = %s\nft res = %d\n", dest, res);
     return (0);
 		//printf(("%d, "), (char *)mem[i]);
 }
