@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <dlfcn.h>
 #include <execinfo.h>
-//#include <bsd/string.h>
+#include <bsd/string.h>
 /*
 int set_signature(const char *format, ...)
 {
@@ -38,6 +38,16 @@ void	ft_print_result(char const *s)
 		len++;
 	write(1, s, len);
 }
+/*
+void	ft_print_resultnb(int n)
+{
+	char c;
+
+	if (n >= 10)
+		ft_print_result((n / 10));
+	c = n % 10 + '0';
+	write (1, &c, 1);
+}*/
 
 void	f()
 {
@@ -46,7 +56,7 @@ void	f()
 
 int main()
 {
-	//atexit(f);
+	atexit(f);
 	//char str[] = "hello ";
 	//char str2[] = "testing this code";
 	//char *r = ft_strchr(str, '\0');
@@ -358,12 +368,46 @@ int main()
 	write(1, mem, 30);
 	free(mem);
 */
-	char dest[0x100];
+	//char dest[0x100];
+	//memset(dest, 'e', 4);
+	//printf("dest before = %s\n", dest);
 	//char dest_std[0x100];
-	int res = ft_strlcpy(dest, "aaa", 4);
-	printf("ft dest = %s\nft res = %d\n", dest, res);
-	int res_std = strlcpy(dest, "aaa", 4);
-	printf("dest_std = %s\n res_std = %d\n", dest, res_std);
+	//size_t res = ft_strlcpy(dest, "aasdjj;s;sa", 100);
+	//printf("res = %zu\n", res);
+	//printf("dest = %s\n", dest);
+	//size_t	res_std = strlcpy(dest, "aasdjj;s;sa", 100);
+	//printf("res_std = %zu\n", res_std);
+	//printf("dest = %s\n", dest);
+ 	/*char *str = "hello !";
+ 	char buff1[0xF00];
+ 	char buff2[0xF00];
+ 	size_t r1;
+ 	size_t r2;
+ 
+ 	memset(buff1, 'A', 20);
+ 	memset(buff2, 'A', 20);
+ 	r1 = strlcpy(buff1, str, 2);
+ 	r2 = ft_strlcpy(buff2, str, 2);
+	printf("r1 = %zu\n", r1);
+	printf("buff1 = %s\n", buff1);
+	printf("r2 = %zu\n", r2);
+	printf("buff2 = %s\n", buff2);
+ 	if (r1 == r2 && !memcmp(buff1, buff2, 20))
+ 		printf("well done\n");
+ 	if (r1 != r2)
+ 	{
+		printf("failed\n");
+		return (1);
+ 	}*/
+ 	char	*dest;
+
+	if (!(dest = (char *)malloc(sizeof(*dest) * 15))) 
+		return (0);
+	memset(dest, 0, 15);
+	memset(dest, 'r', 6);
+	printf("ft = %zu\n", (strlcpy(dest, "lorem", 15)));
+	write(1, "\n", 1);
+	write(1, dest, 15);
     return (0);
 		//printf(("%d, "), (char *)mem[i]);
 }
