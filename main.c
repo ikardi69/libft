@@ -359,11 +359,11 @@ int main()
 	free(mem);
 */
 	char dest[0x100];
-	char dest_std[0x100];
-	int res_std = strlcpy(dest_std, "aaa", 2);
-	printf("dest_std = %s\n res_std = %d\n", dest_std, res_std);
-	int res = ft_strlcpy(dest, "aaa", 2);
+	//char dest_std[0x100];
+	int res = ft_strlcpy(dest, "aaa", 4);
 	printf("ft dest = %s\nft res = %d\n", dest, res);
+	int res_std = strlcpy(dest, "aaa", 4);
+	printf("dest_std = %s\n res_std = %d\n", dest, res_std);
     return (0);
 		//printf(("%d, "), (char *)mem[i]);
 }
