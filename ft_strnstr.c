@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:34:01 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/11 04:37:06 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/12 03:15:59 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,32 +22,16 @@ char	*ft_strnstr(const char *big,	const char *little, size_t len)
 		return ((char *)big);
 	if (big == little)
 		return ((char *)big);
-	if (len == (size_t)-1)
+	if (len > ft_strlen(big))
 		len = ft_strlen(big);
 	i = 0;
-	j = 0;
-	while (i <= len && big[i] != '\0')
+	j = ft_strlen(little);
+	while (j <= len && big[i] != '\0')
 	{
-		j = 0;
-		printf("big[i] = %c little[0] = %c\n", big[i], little[0]);
-		if (big[i] == little[j])
-		{
-			while (i <= len && big[i] == little[j] && (big[i] != '\0' && little[j] != '\0'))
-			{
-				i++;
-				j++;
-			}
-			if (little[j] == '\0' && i <= len)
-				return ((char *)big + (i - j));
-			else
-				break ;		//hadi kt breaki loop kamla fiha mochkil
-			if (big[i - 1] == little[0])
-			{
-				i -= 1;
-			}
-		}
-		else
-			i++;
+		if (!(ft_strncmp(&big[i], little, j)))
+			return ((char *)(big + i));
+		i++;
+		len--;
 	}
 	return (NULL);
 }

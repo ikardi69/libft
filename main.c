@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <bsd/string.h>
+//#include <bsd/string.h>
 
 char ft_test(unsigned int index, char c)
 {
@@ -27,8 +27,14 @@ void	ft_print_result(char const *s)
 	write(1, s, len);
 }
 
+void	f()
+{
+	system("leaks main");
+}
+
 int main()
 {
+	//atexit(f);
 	//char str[] = "hello ";
 	//char str2[] = "testing this code";
 	//char *r = ft_strchr(str, '\0');
@@ -311,14 +317,15 @@ int main()
 	//char	*str1 = "abc";
 	//char	*str2 = "abc";
 	//size_t	n = 19;
-	char haystack[30] = "aaabcabcd";
-	//char *res = ft_strnstr("abcdefgh", "abc", 10);
+	//char haystack[30] = "aaabcabcd";
 	//char needle[10] = "aabc";
 	//char *res = ft_strnstr(haystack, needle, -1);
-	char *res = ft_strnstr(haystack, "abcd", 9);
-	char *res_std = strnstr(haystack, "abcd", 9);
+	//char *res = ft_strnstr(haystack, "abcd", 9);
+	char *res = ft_strnstr("mouhssine simo mouhssine", "mouhssine", 10);
 	printf("res = %s\n", res);
+	char *res_std = strnstr("mouhssine simo mouhssine", "mouhssine", 10);
 	printf("res_std = %s\n", res_std);
+	//printf("res_std = %s\n", res_std);
 	if (res == res_std)
  		printf("well done\n");
 	else
@@ -327,3 +334,7 @@ int main()
     return (0);
 		//printf(("%d, "), (char *)mem[i]);
 }
+
+//	MZIRIBMZIRIBMZE123
+//	MZIRIB
+//	012345678
