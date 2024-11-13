@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <dlfcn.h>
 #include <execinfo.h>
-#include <bsd/string.h>
+//#include <bsd/string.h>
 /*
 int set_signature(const char *format, ...)
 {
@@ -56,7 +56,7 @@ void	f()
 
 int main()
 {
-	atexit(f);
+	//atexit(f);
 	//char str[] = "hello ";
 	//char str2[] = "testing this code";
 	//char *r = ft_strchr(str, '\0');
@@ -368,6 +368,7 @@ int main()
 	write(1, mem, 30);
 	free(mem);
 */
+/*
 	//char dest[0x100];
 	//memset(dest, 'e', 4);
 	//printf("dest before = %s\n", dest);
@@ -378,7 +379,7 @@ int main()
 	//size_t	res_std = strlcpy(dest, "aasdjj;s;sa", 100);
 	//printf("res_std = %zu\n", res_std);
 	//printf("dest = %s\n", dest);
- 	/*char *str = "hello !";
+ 	char *str = "hello !";
  	char buff1[0xF00];
  	char buff2[0xF00];
  	size_t r1;
@@ -398,7 +399,7 @@ int main()
  	{
 		printf("failed\n");
 		return (1);
- 	}*/
+ 	}
  	char	*dest;
 
 	if (!(dest = (char *)malloc(sizeof(*dest) * 15))) 
@@ -408,6 +409,21 @@ int main()
 	printf("ft = %zu\n", (strlcpy(dest, "lorem", 15)));
 	write(1, "\n", 1);
 	write(1, dest, 15);
+*/
+/*
+	printf("atoi = %d\n", atoi("+2147483648"));
+	printf("ft_atoi = %d\n", ft_atoi("+2147483648"));
+*/
+    char **tab = ft_split("      split       this for   me  !       ", ' ');
+    if (!tab) {
+        printf("failed\n");
+        return 1;
+    }
+    for (size_t i = 0; tab[i] != NULL; i++)
+        printf("tab[%zu] = %s\n", i, tab[i]);
+    for (size_t i = 0; tab[i] != NULL; i++)
+        free(tab[i]);
+    free(tab);
     return (0);
 		//printf(("%d, "), (char *)mem[i]);
 }

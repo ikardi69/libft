@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:57:49 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/08 03:48:57 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/13 00:39:35 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	size_t			s_len;
 	size_t			i;
 	char			*result;
-	size_t s_len = ft_strlen(s);
+
 	if (!s)
 		return (NULL);
-	
+	s_len = ft_strlen(s);
 	if (start > s_len)
 		return (ft_strdup(""));
 	if (len > ft_strlen(s) - start)
