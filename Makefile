@@ -6,19 +6,7 @@
 #    By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/04 22:48:57 by mteffahi          #+#    #+#              #
-#    Updated: 2024/11/04 22:49:06 by mteffahi         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: Your Name                                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/04                               #+#    #+#              #
-#    Updated: 2024/11/04                               ###   ########.fr        #
+#    Updated: 2024/11/13 04:51:04 by mteffahi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +25,7 @@ SRCS    = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.
           ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c \
           ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
           ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
-          ft_tolower.c ft_toupper.c
+          ft_tolower.c ft_toupper.c ft_lstnew.c
 
 # Object files
 OBJS    = $(SRCS:.c=.o)

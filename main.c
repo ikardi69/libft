@@ -414,6 +414,8 @@ int main()
 	printf("atoi = %d\n", atoi(NULL));
 	printf("ft_atoi = %d\n", ft_atoi(NULL));
 */
+
+/*
 	//printf("%zu\n", strlen("\0aa\0bbb "));
     char **tab = ft_split("      split       this for   me  !       ", ' ');	//ft_split("\0aa\0bbb ", '\0')
     if (!tab) {
@@ -425,6 +427,24 @@ int main()
     for (size_t i = 0; tab[i] != NULL; i++)
         free(tab[i]);
     free(tab);
+*/
+    // Creating a node with integer content
+    int *num = malloc(sizeof(int));  // Allocate memory for the integer
+    *num = 42;   
+    t_list *node = ft_lstnew(num);
+	if (!node)
+		return (1);
+	printf("%d\n", *(int *)node->content);
+    
+    // Creating a node with string content
+    char *str = "Hello";
+    t_list *str_node = ft_lstnew(str);
+	if (!str_node)
+		return (1);
+    printf("%s\n", str_node->content);
+    // Don't forget to free when done
+    free(node);
+    free(str_node);
     return (0);
 		//printf(("%d, "), (char *)mem[i]);
 }
