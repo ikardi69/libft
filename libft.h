@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:13:54 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/10 01:01:49 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/13 01:38:57 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(const char *s);
 char	*ft_itoa(int n);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);

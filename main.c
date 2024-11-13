@@ -411,10 +411,11 @@ int main()
 	write(1, dest, 15);
 */
 /*
-	printf("atoi = %d\n", atoi("+2147483648"));
-	printf("ft_atoi = %d\n", ft_atoi("+2147483648"));
+	printf("atoi = %d\n", atoi(NULL));
+	printf("ft_atoi = %d\n", ft_atoi(NULL));
 */
-    char **tab = ft_split("      split       this for   me  !       ", ' ');
+	//printf("%zu\n", strlen("\0aa\0bbb "));
+    char **tab = ft_split("      split       this for   me  !       ", ' ');	//ft_split("\0aa\0bbb ", '\0')
     if (!tab) {
         printf("failed\n");
         return 1;
