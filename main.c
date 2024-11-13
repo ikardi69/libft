@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <dlfcn.h>
 #include <execinfo.h>
-//#include <bsd/string.h>
+#include <bsd/string.h>
 /*
 int set_signature(const char *format, ...)
 {
@@ -428,6 +428,7 @@ int main()
         free(tab[i]);
     free(tab);
 */
+/*
     // Creating a node with integer content
     int *num = malloc(sizeof(int));  // Allocate memory for the integer
     *num = 42;   
@@ -445,6 +446,20 @@ int main()
     // Don't forget to free when done
     free(node);
     free(str_node);
+*/
+	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
+ 	char buff1[0xF00] = "there is no stars in the sky";
+ 	char buff2[0xF00] = "there is no stars in the sky";
+	size_t max = strlen("the cake is a lie !\0I'm hidden lol\r\n") + 4;
+	printf("max = %zu\n", max);
+	size_t r1 = strlcat(buff1, str, max);
+	printf("r1 = %zu buff1 = %s\n", r1, buff1);
+ 	size_t r2 = ft_strlcat(buff2, str, max);
+	printf("r2 = %zu buff2 = %s\n", r2, buff2);
+	if (r1 != r2)
+ 		printf("failed\n");
+	else
+		printf("well done\n");
     return (0);
 		//printf(("%d, "), (char *)mem[i]);
 }

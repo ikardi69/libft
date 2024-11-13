@@ -67,8 +67,8 @@ static	char	**ft_alloc(char **words, char const *s, char c, size_t size)
 			words[k] = ft_substr(s, start, end - start);
 		if (!words[k])
 			return (ft_free(words));
-			start = end + 1;
-			k++;
+		start = end + 1;
+		k++;
 		}
 	}
 	words[k] = NULL;
