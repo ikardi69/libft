@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 12:57:49 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/14 03:02:29 by mteffahi         ###   ########.fr       */
+/*   Created: 2024/11/14 04:08:29 by mteffahi          #+#    #+#             */
+/*   Updated: 2024/11/14 04:29:53 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	size_t			s_len;
-	size_t			i;
-	char			*result;
+	int	i;
 
-	if (!s)
-		return (NULL);
-	s_len = ft_strlen(s);
-	if (start > s_len)
-		return (ft_strdup(""));
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
-	result = (char *)malloc(len + 1);
-	if (!result)
-		return (NULL);
+	if (!lst)
+		return (0);
 	i = 0;
-	while (i < len)
+	while (lst)
 	{
-		result[i] = s[start + i];
 		i++;
+		lst = lst->next;
 	}
-	result[i] = '\0';
-	return (result);
+	return (i);
 }

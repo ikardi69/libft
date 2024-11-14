@@ -428,26 +428,55 @@ int main()
         free(tab[i]);
     free(tab);
 */
-/*
+
     // Creating a node with integer content
-    int *num = malloc(sizeof(int));  // Allocate memory for the integer
-    *num = 42;   
-    t_list *node = ft_lstnew(num);
-	if (!node)
-		return (1);
-	printf("%d\n", *(int *)node->content);
+    // int *num = malloc(sizeof(int));  // Allocate memory for the integer
+    // *num = 42;   
+    // t_list *node = ft_lstnew(num);
+	// if (!node)
+	// 	return (1);
+	// printf("%d\n", *(int *)node->content);
     
     // Creating a node with string content
     char *str = "Hello";
     t_list *str_node = ft_lstnew(str);
 	if (!str_node)
 		return (1);
+	t_list	*strstr_node = ft_lstnew("wow");
+	if (!strstr_node)
+		return (1);
+	str_node->next = strstr_node;
+	char *st = "le doc";
+	t_list	*s = (t_list *)malloc(sizeof(t_list));
+	if (!s)
+		return (1);
+	s->content = st;
+	s->next = NULL;
+	strstr_node->next = s;
+	printf("%s\n", strstr_node->content);
     printf("%s\n", str_node->content);
+	printf("%s\n", s->content);
+	printf("node size = %d\n", ft_lstsize(str_node));
+	t_list	*last = ft_lstlast(str_node);
+	printf("%s\n", last->content);
+	t_list	*testlast = (t_list *)malloc(sizeof(t_list));
+	if (!testlast)
+		return (1);
+	testlast->content = (char *)"test last";
+	testlast->next = NULL;
+	ft_lstadd_back(&str_node, testlast);
+	while (str_node)
+	{
+		printf("node = %s\n", str_node->content);
+		str_node = str_node->next;
+	}
+	
     // Don't forget to free when done
-    free(node);
-    free(str_node);
-*/
+    //free(node);
+    //free(str_node);
+
 /*
+ft_strlcat;
 	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
  	char buff1[0xF00] = "there is no stars in the sky";
  	char buff2[0xF00] = "there is no stars in the sky";
@@ -461,13 +490,8 @@ int main()
  		printf("failed\n");
 	else
 		printf("well done\n");
-    return (0);
 */
-	char *str = ft_substr("abc", 7, 4);
-	if (!str)
-		printf("failed\n");
-	else
-		printf("%s\n", str);
+    return (0);
 		//printf(("%d, "), (char *)mem[i]);
 }
 
