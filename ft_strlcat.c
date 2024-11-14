@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:17:07 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/13 04:03:21 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/14 01:55:47 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,19 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	j;
+	size_t	dst_len;
+	size_t	src_len;
 
-	if (size == 0 || size == 1)
-		return (ft_strlen(src) + ft_strlen(dst));
-	/*if (size > ft_strlen(src))
-		size = ft_strlen(src);*/
-	i = ft_strlen(dst);
-	j = 0;
-	printf("size = %zu\n", size);
-	while (i < size)
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (size <= dst_len)
+		return (dst_len + size);
+	i = 0;
+	while (src[i] && ((dst_len + i) < (size - 1)))
 	{
-		dst[i] = src[j];
+		dst[dst_len + i] = src[i];
 		i++;
-		j++;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(dst) + ft_strlen(src));
+	dst[dst_len + i] = '\0';
+	return (dst_len + src_len);
 }

@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <dlfcn.h>
 #include <execinfo.h>
-#include <bsd/string.h>
+//#include <bsd/string.h>
 /*
 int set_signature(const char *format, ...)
 {
@@ -447,6 +447,7 @@ int main()
     free(node);
     free(str_node);
 */
+/*
 	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
  	char buff1[0xF00] = "there is no stars in the sky";
  	char buff2[0xF00] = "there is no stars in the sky";
@@ -461,6 +462,12 @@ int main()
 	else
 		printf("well done\n");
     return (0);
+*/
+	char *str = ft_substr("abc", 7, 4);
+	if (!str)
+		printf("failed\n");
+	else
+		printf("%s\n", str);
 		//printf(("%d, "), (char *)mem[i]);
 }
 
