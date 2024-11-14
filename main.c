@@ -38,6 +38,11 @@ void	ft_print_result(char const *s)
 		len++;
 	write(1, s, len);
 }
+
+void del(void *content)
+{
+    free(content);
+}
 /*
 void	ft_print_resultnb(int n)
 {
@@ -439,6 +444,8 @@ int main()
     
     // Creating a node with string content
 // Allocate and assign strings correctly (no need to malloc here)
+	/*
+	 bonus
     char *s1 = "Hello"; // no need to malloc, just assign the literal directly
     t_list *str_node = ft_lstnew(s1);
     if (!str_node)
@@ -479,11 +486,12 @@ int main()
     testlast->content = s4;
     testlast->next = NULL;
 
+	printf("last node content = %s\n", (char *)testlast->content);
     // Add new node to the list
     ft_lstadd_back(&str_node, testlast);
 
     // Now delete the last node and free its content
-    ft_lstdelone(testlast, free);
+    //ft_lstdelone(testlast, free);
 
     // Print the entire list after deletion
     t_list *temp = str_node;
@@ -494,11 +502,48 @@ int main()
     }
 
     // Clean up the rest of the list (important to avoid memory leaks)
-    //ft_lstclear(&str_node, free);
+    ft_lstclear(&str_node, free);
     // Don't forget to free when done
     //free(node);
     //free(str_node);
+	*/
 
+    // Allocate and assign strings correctly (no need to malloc here)
+    // Create nodes with string content
+    char *str1 = strdup("Hello");
+    char *str2 = strdup("world");
+    char *str3 = strdup("from");
+    char *str4 = strdup("ft_lstclear");
+
+    t_list *list = NULL;
+
+    // Add nodes to the list
+    ft_lstadd_back(&list, ft_lstnew(str1));
+    ft_lstadd_back(&list, ft_lstnew(str2));
+    ft_lstadd_back(&list, ft_lstnew(str3));
+    ft_lstadd_back(&list, ft_lstnew(str4));
+
+    // Print list before clearing
+    printf("List before clearing:\n");
+    t_list *temp = list;
+    while (temp)
+    {
+        printf("%s\n", (char *)temp->content);
+        temp = temp->next;
+    }
+
+    // Clear the list and free the memory
+    ft_lstclear(&list, del);
+
+    // Print list after clearing (should be empty)
+    if (list == NULL)
+    {
+        printf("\nList cleared successfully, list is now NULL.\n");
+    }
+    else
+    {
+        printf("\nList not cleared correctly!\n");
+    }
 /*
 ft_strlcat;
 	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
