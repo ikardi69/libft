@@ -438,39 +438,63 @@ int main()
 	// printf("%d\n", *(int *)node->content);
     
     // Creating a node with string content
-    char *str = "Hello";
-    t_list *str_node = ft_lstnew(str);
-	if (!str_node)
-		return (1);
-	t_list	*strstr_node = ft_lstnew("wow");
-	if (!strstr_node)
-		return (1);
-	str_node->next = strstr_node;
-	char *st = "le doc";
-	t_list	*s = (t_list *)malloc(sizeof(t_list));
-	if (!s)
-		return (1);
-	s->content = st;
-	s->next = NULL;
-	strstr_node->next = s;
-	printf("%s\n", strstr_node->content);
-    printf("%s\n", str_node->content);
-	printf("%s\n", s->content);
-	printf("node size = %d\n", ft_lstsize(str_node));
-	t_list	*last = ft_lstlast(str_node);
-	printf("%s\n", last->content);
-	t_list	*testlast = (t_list *)malloc(sizeof(t_list));
-	if (!testlast)
-		return (1);
-	testlast->content = (char *)"test last";
-	testlast->next = NULL;
-	ft_lstadd_back(&str_node, testlast);
-	while (str_node)
-	{
-		printf("node = %s\n", str_node->content);
-		str_node = str_node->next;
-	}
-	
+// Allocate and assign strings correctly (no need to malloc here)
+    char *s1 = "Hello"; // no need to malloc, just assign the literal directly
+    t_list *str_node = ft_lstnew(s1);
+    if (!str_node)
+        return (1);
+
+    char *s2 = "wow"; // again, directly assign the literal
+    t_list *strstr_node = ft_lstnew(s2);
+    if (!strstr_node)
+        return (1);
+
+    // Link nodes
+    str_node->next = strstr_node;
+
+    // Create and assign next node
+    char *s3 = "le doc"; // no malloc needed, just assign the string
+    t_list *s = (t_list *)malloc(sizeof(t_list));
+    if (!s)
+        return (1);
+    s->content = s3;
+    s->next = NULL;
+    strstr_node->next = s;
+
+    // Print last node content
+    t_list *last = ft_lstlast(str_node);
+    printf("Last content before adding: %s\n", (char *)last->content); // Expected output: le doc
+
+    // Add the "test last" node at the end of the list
+    t_list *testlast = (t_list *)malloc(sizeof(t_list));
+    if (!testlast)
+        return (1);
+
+    // Use malloc to create the string for this node (you want to free it later)
+    char *s4 = (char *)malloc(ft_strlen("test last") + 1);
+    if (!s4)
+        return (1);
+    strcpy(s4, "test last");
+
+    testlast->content = s4;
+    testlast->next = NULL;
+
+    // Add new node to the list
+    ft_lstadd_back(&str_node, testlast);
+
+    // Now delete the last node and free its content
+    ft_lstdelone(testlast, free);
+
+    // Print the entire list after deletion
+    t_list *temp = str_node;
+    while (temp)
+    {
+        printf("node = %s\n", (char *)temp->content);
+        temp = temp->next;
+    }
+
+    // Clean up the rest of the list (important to avoid memory leaks)
+    //ft_lstclear(&str_node, free);
     // Don't forget to free when done
     //free(node);
     //free(str_node);
