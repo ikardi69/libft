@@ -43,6 +43,42 @@ void del(void *content)
 {
     free(content);
 }
+void	ft_change(void *s)
+{
+	size_t	i;
+	char *r;
+
+	if(!s)
+		return ;
+	r = (char *)s;
+	i = 0;
+	while (r[i])
+	{
+		r[i] = 'f';
+		i++;
+	}
+}
+
+void	*ft_change_pointer(void *s)
+{
+	size_t	i;
+	char *r;
+	char *tmp;
+
+	if(!s)
+		return (NULL);
+	tmp = (char *)s;
+	r = ft_strdup(tmp);
+	if (!r)
+		return (NULL);
+	i = 0;
+	while (r[i])
+	{
+		r[i] = 'f';
+		i++;
+	}
+	return (r);
+}
 /*
 void	ft_print_resultnb(int n)
 {
@@ -415,10 +451,10 @@ int main()
 	write(1, "\n", 1);
 	write(1, dest, 15);
 */
-/*
+
 	printf("atoi = %d\n", atoi(NULL));
-	printf("ft_atoi = %d\n", ft_atoi(NULL));
-*/
+	//printf("ft_atoi = %d\n", ft_atoi(NULL));
+
 
 /*
 	//printf("%zu\n", strlen("\0aa\0bbb "));
@@ -510,40 +546,62 @@ int main()
 
     // Allocate and assign strings correctly (no need to malloc here)
     // Create nodes with string content
-    char *str1 = strdup("Hello");
-    char *str2 = strdup("world");
-    char *str3 = strdup("from");
-    char *str4 = strdup("ft_lstclear");
+    // printf("List before changes\n");
+    // char *str1 = strdup("Hello");
+    // char *str2 = strdup("world");
+    // char *str3 = strdup("from");
+    // char *str4 = strdup("ft_lstclear");
 
-    t_list *list = NULL;
+    // t_list *list = NULL;
 
-    // Add nodes to the list
-    ft_lstadd_back(&list, ft_lstnew(str1));
-    ft_lstadd_back(&list, ft_lstnew(str2));
-    ft_lstadd_back(&list, ft_lstnew(str3));
-    ft_lstadd_back(&list, ft_lstnew(str4));
+    // // Add nodes to the list
+    // ft_lstadd_back(&list, ft_lstnew(str1));
+    // ft_lstadd_back(&list, ft_lstnew(str2));
+    // ft_lstadd_back(&list, ft_lstnew(str3));
+    // ft_lstadd_back(&list, ft_lstnew(str4));
 
-    // Print list before clearing
-    printf("List before clearing:\n");
-    t_list *temp = list;
-    while (temp)
-    {
-        printf("%s\n", (char *)temp->content);
-        temp = temp->next;
-    }
+    // // Print list before clearing
+    // t_list *temp = list;
+    // while (temp)
+    // {
+    //     printf("%s\n", (char *)temp->content);
+    //     temp = temp->next;
+    // }
+    // // Clear the list and free the memory
+	// //t_lstiter(list, ft_change);
+    // t_list *temps = list;
+    // while (temps)
+    // {
+    //     printf("%s\n", (char *)temps->content);
+    //     temps = temps->next;
+    // }
+	// t_list	*mimic = ft_lstmap(list, ft_change_pointer, del);
+	// if (!mimic)
+	// {
+	// 	printf("fail\n");
+	//     ft_lstclear(&list, del);
+	// 	ft_lstclear(&mimic, del);
+	// 	return (1);
+	// }
+    // temps = mimic;
+	// printf("The new list after changes\n");
+    // while (temps)
+    // {
+    //     printf("%s\n", (char *)temps->content);
+    //     temps = temps->next;
+    // }
+    // ft_lstclear(&list, del);
+    // ft_lstclear(&mimic, del);
 
-    // Clear the list and free the memory
-    ft_lstclear(&list, del);
-
-    // Print list after clearing (should be empty)
-    if (list == NULL)
-    {
-        printf("\nList cleared successfully, list is now NULL.\n");
-    }
-    else
-    {
-        printf("\nList not cleared correctly!\n");
-    }
+    // //Print list after clearing (should be empty)
+    // if (list == NULL && mimic == NULL)
+    // {
+    //     printf("\nList cleared successfully, list is now NULL.\n");
+    // }
+    // else
+    // {
+    //     printf("\nList not cleared correctly!\n");
+    // }
 /*
 ft_strlcat;
 	char *str = "the cake is a lie !\0I'm hidden lol\r\n";

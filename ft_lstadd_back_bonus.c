@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 04:38:39 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/14 04:52:12 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/15 00:34:55 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
-	if (!lst || !new)
+	if (!new)
 		return ;
 	if (*lst == NULL)
 	{
