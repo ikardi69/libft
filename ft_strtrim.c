@@ -6,13 +6,11 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 16:07:45 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/13 00:37:50 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/15 20:22:55 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 static	size_t	ft_skip(char const *s1, char const *set)
 {

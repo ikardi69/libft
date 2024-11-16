@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 18:07:07 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/12 05:48:41 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/16 01:05:41 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t	i;
 
 	if (!dest && !src)
-	{
-		dptr = NULL;
-		return ((void *)dptr);
-	}
+		return (NULL);
 	i = 0;
 	dptr = (char *)dest;
 	sptr = (char *)src;
+	if (dptr == sptr)
+		return (dptr);
 	while (i < n)
 	{
 		dptr[i] = sptr[i];

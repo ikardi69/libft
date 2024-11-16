@@ -452,7 +452,7 @@ int main()
 	write(1, dest, 15);
 */
 
-	printf("atoi = %d\n", atoi(NULL));
+	// printf("atoi = %d\n", ft_atoi(NULL));
 	//printf("ft_atoi = %d\n", ft_atoi(NULL));
 
 
@@ -476,6 +476,7 @@ int main()
     // t_list *node = ft_lstnew(num);
 	// if (!node)
 	// 	return (1);
+	// int *ptr = (int *)node->content;
 	// printf("%d\n", *(int *)node->content);
     
     // Creating a node with string content
@@ -618,10 +619,25 @@ ft_strlcat;
 	else
 		printf("well done\n");
 */
-    return (0);
+	//printf("%s", ft_strmapi("hello", NULL))
+
 		//printf(("%d, "), (char *)mem[i]);
+
+
+		// sinshiiiiii
+
+
+	char src[] = "abcdef";
+	char *dst = src;
+
+	// if (src == dst)
+	// 	printf("t7a9at\n");
+
+	char * rslt = ft_memcpy(dst, NULL, ft_strlen(dst));
+	printf("%s\n", rslt);
 }
 
 //	MZIRIBMZIRIBMZE123
 //	MZIRIB
 //	012345678
+

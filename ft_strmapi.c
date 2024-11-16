@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 01:40:08 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/04 23:08:58 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/15 19:54:29 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*result;
 	size_t	size;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	size = ft_strlen(s);
 	result = (char *)malloc((size + 1));
