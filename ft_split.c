@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:03:15 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/15 19:57:34 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/17 01:23:46 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ static	char	**ft_alloc(char **words, char const *s, char c, size_t size)
 			end++;
 		if (end > start)
 		{
-			words[k] = ft_substr(s, start, end - start);
-		if (!words[k])
-			return (ft_free(words));
-		start = end + 1;
-		k++;
+			words[k] = ft_substr(s, start, (end - start));
+			if (!words[k])
+				return (ft_free(words));
+			start = end + 1;
+			k++;
 		}
 	}
 	words[k] = NULL;

@@ -16,6 +16,21 @@ int set_signature(const char *format, ...)
 	return g_offset;
 }*/
 
+
+void	ft_free(char **s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s)
+	{
+		free(s[i]);
+		i++;
+		s++;
+	}
+	free(s);
+}
+
 char ft_test(unsigned int index, char c)
 {
 	(void)index;
@@ -627,15 +642,111 @@ ft_strlcat;
 		// sinshiiiiii
 
 
-	char src[] = "abcdef";
-	char *dst = src;
+	// char src[] = "abcdef";
+	// char *dst = src;
 
-	// if (src == dst)
-	// 	printf("t7a9at\n");
+	// // if (src == dst)
+	// // 	printf("t7a9at\n");
 
-	char * rslt = ft_memcpy(dst, NULL, ft_strlen(dst));
-	printf("%s\n", rslt);
+	// char * rslt = ft_memcpy(dst, NULL, ft_strlen(dst));
+	// printf("%s\n", rslt);
+	// char **r = ft_split("a|||b|||c", '|');
+	// if (!r)
+	// {
+	// 	printf("failed\n");
+	// 	return (1);
+	// }
+	// unsigned long i = 0;
+	// while (r[i] != NULL)
+	// {
+	// 	printf(",%s", r[i]);
+	// 	i++;
+	// }
+	// //ft_free(r);
+	// char *big_string = malloc(1000000);
+	// memset(big_string, 'a', 999999);
+	// big_string[500000] = ',';
+	// big_string[999999] = '\0';
+	// char **result = ft_split(big_string, ',');
+	// printf("First part: %.10s\n", result[0]); // Expect 500000 'a's
+	// printf("Second part: %.10s\n", result[1]); // Expect 500000 'a's
+	// free(big_string);
+	// for (int i = 0; result[i]; i++) free(result[i]);
+	// free(result);
+	// t_list *lst = ft_lstnew((void *)ft_strdup("Node1"));
+	// ft_lstadd_back(&lst, ft_lstnew(ft_strdup("Node2")));
+	// ft_lstadd_back(&lst, ft_lstnew(ft_strdup("Node3")));
+	// t_list *new_lst = ft_lstmap(lst, (void *)ft_strdup, free);
+	// while (new_lst) {
+    // 	printf("Transformed node: %s\n", (char *)new_lst->content);
+    // 	t_list *temp = new_lst;
+    // 	new_lst = new_lst->next;
+    // 	free(temp->content);
+    // 	free(temp);
+	// }
+	// ft_lstclear(&lst, free);
+	// printf("array\n");
+	// int *array = (int *)malloc(sizeof(int) * 11);
+	// if (!array)
+	// {
+	// 	printf("allocation failed\n");
+	// 	return (1);
+	// }
+	// int i = 0;
+	// while (i < 11)
+	// {
+	// 	ft_memset(array+(i), 0xFF, 1);
+	// 	printf("%d\n", array[i]);
+	// 	i++;
+	// }
+	// int *cpy = (int *)malloc(sizeof(int) * 11);
+	// if (!cpy)
+	// {
+	// 	printf("allocation failed\n");
+	// 	return (1);
+	// }
+	// printf("cpy\n");
+	// i = 0;
+	// while (i < 11)
+	// {
+	// 	ft_memset(cpy+(i), 0xF0, 1);
+	// 	printf("%d\n", array[i]);
+	// 	i++;
+	// }
+	// while (i < 6)
+	// {
+	// 	ft_memcpy(cpy+i, array+i, 1);
+	// 	//("%d\n", cpy[i]);
+	// 	i++;
+	// }
+	// i = 0;
+	// while (i < 6)
+	// {
+	// 	printf("%d\n", cpy[i]);
+	// 	i++;
+	// }
+	char *r = (char *)malloc((ft_strlen("hello") + 1));
+	if (!r)
+	{
+		printf("failed\n");
+		return (1);
+	}
+	ft_strlcpy(r, "hello", (ft_strlen("hello") + 1));
+	size_t i = ft_strlen(r);
+	printf("i = %zu\n", i);
+	int j = 0;
+	while(i < (i / 2))
+	{
+		r = ft_memmove(r+j, r+(i), 2);
+		i--;
+		j++;
+	}
+	printf("%s\n", r);
+	free(r);
+	return (0);
 }
+//	hello
+//	olleh
 
 //	MZIRIBMZIRIBMZE123
 //	MZIRIB
