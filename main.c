@@ -725,24 +725,67 @@ ft_strlcat;
 	// 	printf("%d\n", cpy[i]);
 	// 	i++;
 	// }
-	char *r = (char *)malloc((ft_strlen("hello") + 1));
-	if (!r)
+	// char *r = (char *)malloc((ft_strlen("hello") + 1));
+	// if (!r)
+	// {
+	// 	printf("failed\n");
+	// 	return (1);
+	// }
+	// ft_strlcpy(r, "hello", (ft_strlen("hello") + 1));
+    // size_t len = strlen(r);
+    // size_t i = 0;
+    // size_t j = len - 1;
+
+    // while (i < j)
+    // {
+    //     char temp;
+    //     ft_memmove(&temp, r + i, 1);
+    //     ft_memmove(r + i, r + j, 1);
+    //     ft_memmove(r + j, &temp, 1);
+    //     i++;
+    //     j--;
+    // }
+	// printf("%s\n", r);
+	//free(r);
+	// int *array = (int *)malloc(sizeof(int) * 10);
+	// if (!array)
+	// {
+	// 	printf("allocation failed\n");
+	// 	return (1);
+	// }
+	// //size_t i = sizeof(array);
+	// size_t j = 0;
+	// while (j < 10)
+	// {
+	// 	ft_memset(&array[j], -0x1, sizeof(int));
+	// 	j++;
+	// }
+	// j = 0;
+	// while (j < 10)
+	// {
+	// 	printf("%d\n", array[j]);
+	// 	j++;
+	// }
+	// j = 0;
+	// while (array)
+	// {
+	// 	free(&array[j]);
+	// 	j++;
+	// }
+	// free(array);
+	char *ptr = (char *)malloc(6);
+	if (!ptr)
 	{
-		printf("failed\n");
+		printf("allocation failed\n");
 		return (1);
 	}
-	ft_strlcpy(r, "hello", (ft_strlen("hello") + 1));
-	size_t i = ft_strlen(r);
-	printf("i = %zu\n", i);
-	int j = 0;
-	while(i < (i / 2))
-	{
-		r = ft_memmove(r+j, r+(i), 2);
-		i--;
-		j++;
-	}
-	printf("%s\n", r);
-	free(r);
+	ft_strlcpy(ptr, "hello", 6);
+	printf("ptr = %s\n", ptr);
+	size_t size = ft_strlen(ptr);
+	printf("size = %zu str = %s\n", size, ptr);
+	ft_bzero(ptr+4, 1);
+	printf("size = %zu str = %s\n", ft_strlen(ptr), ptr);
+	free(ptr);
 	return (0);
 }
 //	hello
@@ -751,4 +794,3 @@ ft_strlcat;
 //	MZIRIBMZIRIBMZE123
 //	MZIRIB
 //	012345678
-

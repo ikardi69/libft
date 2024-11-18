@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 23:55:06 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/16 00:58:08 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/18 00:29:53 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	pdst = (char *)dest;
 	psrc = (const char *)src;
+	if (dest == src)
+		return (dest);
 	if (pdst > psrc && pdst < psrc + n)
 	{
 		while (n > 0)
