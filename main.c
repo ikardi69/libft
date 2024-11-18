@@ -773,19 +773,24 @@ ft_strlcat;
 	// 	j++;
 	// }
 	// free(array);
-	char *ptr = (char *)malloc(6);
-	if (!ptr)
-	{
-		printf("allocation failed\n");
-		return (1);
-	}
-	ft_strlcpy(ptr, "hello", 6);
-	printf("ptr = %s\n", ptr);
-	size_t size = ft_strlen(ptr);
-	printf("size = %zu str = %s\n", size, ptr);
-	ft_bzero(ptr+4, 1);
-	printf("size = %zu str = %s\n", ft_strlen(ptr), ptr);
-	free(ptr);
+	// char *ptr = (char *)malloc(6);
+	// if (!ptr)
+	// {
+	// 	printf("allocation failed\n");
+	// 	return (1);
+	// }
+	// ft_strlcpy(ptr, "hello", 6);
+	// printf("ptr = %s\n", ptr);
+	// size_t size = ft_strlen(ptr);
+	// printf("size = %zu str = %s\n", size, ptr);
+	// ft_bzero(ptr+4, 1);
+	// printf("size = %zu str = %s\n", ft_strlen(ptr), ptr);
+	// free(ptr);
+	// int fd = open("a", O_WRONLY);
+	// ft_putchar_fd(NULL, fd);
+	printf("%d\n", atoi("-9223372036854775807"));
+	printf("%d\n", ft_atoi("-9223372036854775807"));
+	printf("%llu", 9223372036854775807ULL);
 	return (0);
 }
 //	hello
