@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 04:33:35 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/15 01:56:03 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/19 02:35:16 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ t_list	*ft_lstnew(void *content)
 		return (NULL);
 	new->content = content;
 	new->next = NULL;
-	return(new);
+	return (new);
 }
