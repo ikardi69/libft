@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:03:15 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/19 03:03:19 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/21 21:20:45 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,10 @@ static char	**ft_free(char **s)
 	size_t	i;
 
 	i = 0;
-	while (s)
+	while (s[i])
 	{
 		free(s[i]);
 		i++;
-		s++;
 	}
 	free(s);
 	return (NULL);

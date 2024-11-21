@@ -6,12 +6,11 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:34:01 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/12 03:15:59 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/20 10:44:24 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strnstr(const char *big,	const char *little, size_t len)
 {

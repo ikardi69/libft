@@ -39,4 +39,4 @@ re: fclean all
 bonus: $(B_OBJECTS)
 	ar rc $(NAME) $(B_OBJECTS)
 
-.PHONY: clean fclean
+.PHONY: clean fclean all

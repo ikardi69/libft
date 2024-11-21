@@ -6,12 +6,11 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 13:10:42 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/13 00:38:26 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/20 10:42:29 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

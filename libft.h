@@ -6,7 +6,7 @@
 /*   By: mteffahi <mteffahi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:13:54 by mteffahi          #+#    #+#             */
-/*   Updated: 2024/11/19 04:17:15 by mteffahi         ###   ########.fr       */
+/*   Updated: 2024/11/20 15:22:56 by mteffahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
 
 # define LL_MAX 9223372036854775807LL
 
@@ -29,7 +28,7 @@ int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
-int		ft_isprint(int c);
+int		ft_isprint(int c);	
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 size_t	ft_strlen(const char *s);
